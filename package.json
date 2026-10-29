@@ -2,7 +2,7 @@
   "version": "1.0.0",
   "type": "module",
   "source": "./index.html",
-  "name": "project",
+  "name": "myproject",
   "description": "A React project",
   "scripts": {
     "dev": "vite",
