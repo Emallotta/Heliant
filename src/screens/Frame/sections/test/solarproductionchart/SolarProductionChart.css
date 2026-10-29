@@ -1,0 +1,169 @@
+.solar-chart {
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* HEADER */
+
+.solar-chart__header {
+  height: 32px;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #666;
+}
+
+.solar-chart__accumulated {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.solar-chart__accumulated strong {
+  color: #333;
+}
+
+.solar-chart__red-square {
+  width: 6px;
+  height: 6px;
+  background: #ef382d;
+  display: inline-block;
+}
+
+.solar-chart__power {
+  font-size: 8px;
+  color: #777;
+}
+
+/* GRAPH */
+
+.solar-chart__viewport {
+  width: 100%;
+  height: 240px;
+}
+
+.solar-chart__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.solar-chart__grid {
+  stroke: #dedede;
+  stroke-width: 1;
+}
+
+.solar-chart__baseline {
+  stroke: #222;
+  stroke-width: 1;
+}
+
+.solar-chart__curve {
+  stroke: #6c6c6c;
+  stroke-width: 1.4;
+  stroke-dasharray: 1 4;
+  stroke-linecap: round;
+}
+
+.solar-chart__bar {
+  stroke: #f08b82;
+  stroke-width: 1.2;
+  opacity: 0.5;
+}
+
+.solar-chart__dot-outer {
+  fill: #fff;
+  stroke: #ef382d;
+  stroke-width: 2;
+}
+
+.solar-chart__dot-inner {
+  fill: #ef382d;
+}
+
+/* AXIS */
+
+.solar-chart__axis {
+  display: flex;
+  justify-content: space-between;
+
+  padding:
+    0 30px
+    5px;
+
+  font-size: 8px;
+  color: #555;
+}
+
+/* CONTROLS */
+
+.solar-chart__controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 30px;
+}
+
+.solar-chart__time {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.solar-chart__power-value {
+  font-size: 11px;
+  color: #666;
+  margin-right: auto;
+}
+
+.solar-chart__controls button {
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+
+  padding: 5px 10px;
+
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.solar-chart__controls button:hover {
+  background: #eee;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .solar-chart__header {
+    padding: 0 15px;
+  }
+
+  .solar-chart__axis {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .solar-chart__controls {
+    padding: 10px 15px;
+  }
+
+  .solar-chart__power {
+    display: none;
+  }
+}

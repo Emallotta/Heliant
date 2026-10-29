@@ -1,0 +1,214 @@
+
+.daylight-component {
+  --daylight-red: #f32d13;
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  overflow: hidden;
+  background: var(--daylight-red);
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.daylight-divider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  border-left: 1px dashed rgba(17, 17, 17, 0);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.daylight-content {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  width: min(100% - 48px, 730px);
+  min-height: 360px;
+  margin: 0 auto;
+  padding: 42px 0 38px;
+  box-sizing: border-box;
+}
+
+.daylight-heading {
+  grid-row: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.daylight-heading h1 {
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(23px, 3vw, 30px);
+  font-weight: 750;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.daylight-chart-wrap {
+  grid-row: 2;
+  width: 100%;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+.daylight-graph {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.daylight-bottom {
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 24px;
+  margin-top: 0;
+}
+
+.daylight-clock-block {
+  min-width: 0;
+}
+
+.daylight-clock {
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(28px, 4vw, 34px);
+  font-weight: 750;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.daylight-caption {
+  min-height: 10px;
+  margin: 9px 0 0;
+  font-size: 6.5px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  opacity: 0.88;
+}
+
+.daylight-action {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-width: 0;
+  padding-bottom: 1px;
+}
+
+.daylight-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  min-height: 20px;
+  padding: 4px 7px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 7px;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  cursor: pointer;
+  transition:
+    background-color 240ms ease,
+    color 240ms ease,
+    border-color 240ms ease,
+    transform 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.daylight-cta:hover:not(:disabled) {
+  background: #fff;
+  color: var(--daylight-red);
+  transform: translateY(-2px);
+}
+
+.daylight-cta:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.daylight-cta:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (min-width: 900px) {
+  .daylight-component {
+    min-height: 360px;
+  }
+
+  .daylight-content {
+    width: min(100% - 80px, 730px);
+    min-height: 360px;
+    padding-top: 44px;
+    padding-bottom: 40px;
+  }
+
+  .daylight-chart-wrap {
+    margin-top: 18px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 560px) {
+  .daylight-divider {
+    left: 50%;
+  }
+
+  .daylight-content {
+    width: calc(100% - 36px);
+    min-height: 340px;
+    padding: 36px 0 30px;
+  }
+
+  .daylight-heading h1 {
+    font-size: clamp(21px, 5.5vw, 28px);
+  }
+
+  .daylight-chart-wrap {
+    width: calc(100% + 12px);
+    margin-left: -6px;
+    margin-top: 28px;
+    margin-bottom: 24px;
+  }
+
+  .daylight-bottom {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 22px;
+  }
+
+  .daylight-clock {
+    font-size: 31px;
+  }
+
+  .daylight-caption {
+    font-size: 7px;
+  }
+
+  .daylight-action {
+    justify-content: flex-start;
+  }
+
+  .daylight-cta {
+    font-size: 9px;
+    min-height: 26px;
+    padding: 6px 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daylight-cta {
+    transition: none;
+  }
+}

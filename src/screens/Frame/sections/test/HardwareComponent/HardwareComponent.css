@@ -1,0 +1,285 @@
+
+.hardware {
+  --hardware-red: #ef321e;
+  --hardware-ink: #252525;
+  --hardware-muted: #777;
+  --hardware-line: #aaa;
+
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 32px 0 40px;
+  box-sizing: border-box;
+
+  color: var(--hardware-ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hardware *,
+.hardware *::before,
+.hardware *::after {
+  box-sizing: border-box;
+}
+
+/* Header */
+
+.hardware__eyebrow {
+  margin-bottom: 10px;
+
+  color: var(--hardware-red);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Main specification panel */
+
+.hardware__hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  min-width: 0;
+  border: 1px solid #777;
+}
+
+.hardware__diagram-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 0;
+  min-height: 285px;
+  padding: 16px 12px;
+
+  border-right: 1px solid #999;
+  overflow: hidden;
+}
+
+.hardware-diagram {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  overflow: visible;
+}
+
+.diagram-layer {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 350ms ease;
+}
+
+.diagram-layer.is-selected {
+  opacity: 1;
+}
+
+/* Specifications */
+
+.hardware__specs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+  padding: 22px 30px;
+}
+
+.hardware__specs h2 {
+  margin: 0 0 13px;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.hardware__spec-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  min-height: 34px;
+  padding: 8px 0;
+
+  border-bottom: 1px solid var(--hardware-line);
+}
+
+.hardware__spec-row span {
+  color: var(--hardware-muted);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.hardware__spec-row strong {
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+.hardware__spec-row .hardware__red {
+  color: var(--hardware-red);
+}
+
+.hardware__spec-note {
+  margin: 13px 0 0;
+
+  color: var(--hardware-muted);
+  font-size: 8px;
+  line-height: 1.7;
+}
+
+/* Descriptive list */
+
+.hardware__list {
+  margin-top: 28px;
+}
+
+.hardware__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 20px;
+
+  width: 100%;
+  min-width: 0;
+  padding: 22px 0 20px;
+
+  border: 0;
+  border-bottom: 1px solid var(--hardware-line);
+  border-radius: 0;
+
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.hardware__item:last-child {
+  border-bottom: 0;
+}
+
+.hardware__item-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+
+  padding-left: 16px;
+}
+
+.hardware__item-number {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.hardware__item-number i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+
+  background: var(--hardware-red);
+
+  transition: transform 250ms ease;
+}
+
+.hardware__item.is-selected .hardware__item-number i {
+  transform: rotate(45deg) scale(1.1);
+}
+
+.hardware__item-title strong {
+  padding-left: 16px;
+
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+
+  transition: color 250ms ease;
+}
+
+.hardware__item.is-selected .hardware__item-title strong {
+  color: var(--hardware-red);
+}
+
+.hardware__item > p {
+  max-width: 450px;
+  margin: 0;
+
+  color: #555;
+  font-size: 12px;
+  line-height: 1.85;
+}
+
+/* Responsive */
+
+@media (max-width: 1050px) {
+  .hardware {
+    width: 100%;
+    padding: 28px 24px 36px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hardware {
+    padding: 24px 16px 32px;
+  }
+
+  .hardware__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hardware__diagram-wrap {
+    min-height: 240px;
+    padding: 20px 12px;
+
+    border-right: 0;
+    border-bottom: 1px solid #999;
+  }
+
+  .hardware-diagram {
+    max-width: 420px;
+  }
+
+  .hardware__specs {
+    padding: 22px 20px;
+  }
+
+  .hardware__list {
+    margin-top: 18px;
+  }
+
+  .hardware__item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    padding: 20px 0;
+  }
+
+  .hardware__item-title {
+    padding-left: 4px;
+  }
+
+  .hardware__item-title strong {
+    padding-left: 16px;
+  }
+
+  .hardware__item > p {
+    max-width: none;
+    padding-left: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hardware *,
+  .hardware *::before,
+  .hardware *::after {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,473 @@
+
+/* =========================================
+   PAGE / COMPONENT
+========================================= */
+
+.surface-yield {
+  width: min(100%, 1000px);
+  margin: 0 auto;
+  padding: 44px 0 60px;
+  box-sizing: border-box;
+
+  background: #f4f3f3;
+  color: #202020;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.surface-yield__header {
+  width: 100%;
+  margin: 0 0 46px;
+}
+
+.surface-yield__eyebrow {
+  margin-bottom: 16px;
+
+  color: #ef321e;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.surface-yield__header h1 {
+  margin: 0;
+
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.12;
+  font-weight: 750;
+  letter-spacing: -1.5px;
+}
+
+.surface-yield__header p {
+  max-width: 470px;
+  margin: 22px 0 0;
+
+  color: #555;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   MAIN PANEL
+========================================= */
+
+.surface-yield__panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+  min-height: 462px;
+
+  border: 1px solid #999;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LEFT COLUMN
+========================================= */
+
+.surface-yield__controls {
+  min-width: 0;
+  padding: 35px 34px 32px;
+  box-sizing: border-box;
+
+  border-right: 1px solid #999;
+}
+
+.surface-yield__control {
+  margin-bottom: 37px;
+}
+
+.surface-yield__label {
+  margin-bottom: 19px;
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.surface-yield__label strong {
+  font-weight: 700;
+}
+
+/* =========================================
+   SLIDERS
+========================================= */
+
+.surface-yield__slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 18px;
+}
+
+.surface-yield__slider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+
+  height: 2px;
+  transform: translateY(-50%);
+  background: #aaa;
+}
+
+.surface-yield__slider-progress {
+  display: none;
+}
+
+.surface-yield__slider input {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  height: 18px;
+  margin: 0;
+
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.surface-yield__slider input::-webkit-slider-runnable-track {
+  height: 2px;
+  background: transparent;
+}
+
+.surface-yield__slider input::-webkit-slider-thumb {
+  width: 17px;
+  height: 17px;
+  margin-top: -7.5px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  border: none;
+  border-radius: 0;
+  background: #ef321e;
+
+  cursor: grab;
+}
+
+.surface-yield__slider input::-moz-range-track {
+  height: 2px;
+  background: transparent;
+}
+
+.surface-yield__slider input::-moz-range-thumb {
+  width: 17px;
+  height: 17px;
+
+  border: none;
+  border-radius: 0;
+  background: #ef321e;
+
+  cursor: grab;
+}
+
+/* =========================================
+   ACTIVE SURFACE
+========================================= */
+
+.surface-yield__surface {
+  margin-top: 4px;
+  margin-bottom: 31px;
+
+  color: #666;
+  font-size: 12px;
+  letter-spacing: 0.055em;
+}
+
+.surface-yield__surface strong {
+  font-weight: 400;
+}
+
+/* =========================================
+   MOUNT / SKY OPTIONS
+========================================= */
+
+.surface-yield__option {
+  margin-top: 25px;
+}
+
+.surface-yield__option-label {
+  margin-bottom: 9px;
+
+  color: #555;
+  font-size: 11px;
+}
+
+.surface-yield__buttons {
+  display: flex;
+  width: 100%;
+}
+
+.surface-yield__buttons button {
+  flex: 1;
+  min-width: 0;
+  min-height: 35px;
+
+  padding: 6px 8px;
+  margin: 0;
+
+  border: 1px solid #aaa;
+  border-right: 0;
+  border-radius: 0;
+
+  background: transparent;
+  color: #222;
+
+  font-family: inherit;
+  font-size: 11px;
+  white-space: nowrap;
+
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    color 150ms ease;
+}
+
+.surface-yield__buttons button:last-child {
+  border-right: 1px solid #aaa;
+}
+
+.surface-yield__buttons button:hover:not(.active) {
+  background: #e9e8e8;
+}
+
+.surface-yield__buttons button.active {
+  border-color: #ef321e;
+  background: #ef321e;
+  color: #fff;
+}
+
+/* =========================================
+   RIGHT COLUMN
+========================================= */
+
+.surface-yield__results {
+  min-width: 0;
+  padding: 30px 34px 28px;
+  box-sizing: border-box;
+}
+
+/* =========================================
+   ANNUAL YIELD
+========================================= */
+
+.surface-yield__annual {
+  margin-bottom: 30px;
+}
+
+.surface-yield__annual-number {
+  color: #ef321e;
+
+  font-size: clamp(48px, 5vw, 80px);
+  line-height: 1;
+  font-weight: 750;
+  letter-spacing: -3px;
+
+  white-space: nowrap;
+}
+
+.surface-yield__annual-label {
+  margin-top: 15px;
+
+  color: #777;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+}
+
+/* =========================================
+   METRICS
+========================================= */
+
+.surface-yield__stats {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 0.9fr;
+  gap: 14px;
+
+  margin-bottom: 39px;
+}
+
+.surface-yield__stats > div {
+  min-width: 0;
+}
+
+.surface-yield__stats strong {
+  display: block;
+  margin-bottom: 11px;
+
+  font-size: clamp(14px, 1.35vw, 22px);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+.surface-yield__stats span {
+  display: block;
+
+  color: #777;
+  font-size: 9px;
+  line-height: 1.55;
+  letter-spacing: 0.055em;
+}
+
+/* =========================================
+   MONTHLY DISTRIBUTION
+========================================= */
+
+.surface-yield__monthly-title {
+  margin-bottom: 17px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.surface-yield__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+
+  width: 100%;
+  height: 105px;
+
+  border-bottom: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+.surface-yield__bar-wrapper {
+  display: flex;
+  align-items: flex-end;
+
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+
+.surface-yield__bar {
+  width: 100%;
+  min-height: 2px;
+
+  background: #b5b5b5;
+
+  transition:
+    height 250ms ease,
+    background 150ms ease;
+}
+
+.surface-yield__bar.maximum {
+  background: #ef321e;
+}
+
+/* =========================================
+   MONTH LABELS
+========================================= */
+
+.surface-yield__months {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 3px;
+
+  margin-top: 10px;
+}
+
+.surface-yield__months span {
+  color: #777;
+  font-size: 8px;
+  text-align: center;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+  .surface-yield {
+    width: 100%;
+    padding: 36px 24px 48px;
+  }
+}
+
+@media (max-width: 700px) {
+  .surface-yield {
+    padding: 28px 16px 36px;
+  }
+
+  .surface-yield__header {
+    margin-bottom: 30px;
+  }
+
+  .surface-yield__header p {
+    margin-top: 15px;
+  }
+
+  .surface-yield__panel {
+    grid-template-columns: 1fr;
+  }
+
+  .surface-yield__controls {
+    padding: 28px 24px;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+  }
+
+  .surface-yield__results {
+    padding: 30px 24px;
+  }
+
+  .surface-yield__annual-number {
+    font-size: clamp(48px, 11vw, 72px);
+  }
+
+  .surface-yield__stats {
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .surface-yield__stats strong {
+    font-size: clamp(12px, 3vw, 18px);
+  }
+
+  .surface-yield__buttons button {
+    padding: 7px 5px;
+    font-size: 10px;
+    white-space: normal;
+  }
+}
+
+@media (max-width: 380px) {
+  .surface-yield__controls,
+  .surface-yield__results {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .surface-yield__stats {
+    grid-template-columns: 1fr 1.15fr 0.9fr;
+    gap: 7px;
+  }
+
+  .surface-yield__stats strong {
+    font-size: 11px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .surface-yield__stats span {
+    font-size: 8px;
+  }
+}
