@@ -19,7 +19,6 @@ export const DaylightHeroSection = (): JSX.Element => {
       <div className="w-full max-w-[820px]">
         <h1 className="[font-family:'Archivo',Helvetica] text-[42px] font-extrabold leading-[1.06] tracking-[-1.6px] text-[#201e1d] sm:text-[60px] lg:text-[80px]">
           173,000 terawatts fall
-          <br />
           on Earth.
           <br />
           Catch your share.
