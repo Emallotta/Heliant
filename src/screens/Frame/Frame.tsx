@@ -1,8 +1,8 @@
 import { CustomerTestimonialSection } from "./sections/CustomerTestimonialSection/CustomerTestimonialSection";
 import { DaylightHeroSection } from "./sections/DaylightHeroSection/DaylightHeroSection";
 import { NavigationSection } from "./sections/NavigationSection/NavigationSection";
-import  SurfaceYield  from "./sections/test/surfaceyield/SurfaceYield";
-import  SolarProductionChart  from "./sections/test/solarproductionchart/SolarProductionChart";
+import SurfaceYield  from "./sections/test/surfaceyield/SurfaceYield";
+import SolarProductionChart  from "./sections/test/solarproductionchart/SolarProductionChart";
 import HouseInstrument from "./sections/test/HouseIntrument/HouseInstrument";
 import HardwareComponent from "./sections/test/HardwareComponent/HardwareComponent";
 import TheField from "./sections/test/Field/field";

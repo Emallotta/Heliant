@@ -12,7 +12,7 @@ export const CustomerTestimonialSection = (): JSX.Element => {
       aria-label="Customer testimonial"
       className="w-full px-4 sm:px-8 lg:px-0"
     >
-      <Card className="mx-auto w-full max-w-[864px] border-0 bg-transparent shadow-none">
+      <Card className="mx-auto w-full max-w-[864px] min-h-[300px] border-0 bg-transparent shadow-none">
         <CardContent className="p-0">
           <blockquote className="flex max-w-[655px] flex-col gap-9">
             <p className="[font-family:'Archivo',Helvetica] text-[34px] font-extrabold leading-[42px] tracking-[-0.51px] text-[#201e1d]">
