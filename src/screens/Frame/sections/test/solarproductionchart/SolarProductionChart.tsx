@@ -167,12 +167,12 @@ export default function SolarProductionChart ({
    */
   const chart = useMemo(() => {
     const width = 1100;
-    const height = 280;
+    const height = 340;
 
     const paddingLeft = 30;
     const paddingRight = 30;
-    const paddingTop = 25;
-    const paddingBottom = 42;
+    const paddingTop = 34;
+    const paddingBottom = 52;   
 
     const graphWidth =
       width - paddingLeft - paddingRight;
@@ -316,7 +316,7 @@ export default function SolarProductionChart ({
         <svg
           className="solar-chart__svg"
           viewBox={`0 0 ${chart.width} ${chart.height}`}
-          preserveAspectRatio="none"
+          preserveAspectRatio="xMidYMid meet"
         >
 
           {/* GRID VERTICAL */}

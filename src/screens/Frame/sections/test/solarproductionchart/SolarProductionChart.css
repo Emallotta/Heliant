@@ -1,8 +1,14 @@
+
 .solar-chart {
   width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+
   background: #f3f2f2;
   border-radius: 8px;
   overflow: hidden;
+
   font-family:
     Inter,
     ui-sans-serif,
@@ -13,17 +19,23 @@
     sans-serif;
 }
 
+.solar-chart *,
+.solar-chart *::before,
+.solar-chart *::after {
+  box-sizing: border-box;
+}
+
 /* HEADER */
 
 .solar-chart__header {
-  height: 32px;
-  padding: 0 30px;
+  min-height: 46px;
+  padding: 0 3%;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  font-size: 9px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.03em;
   color: #666;
@@ -32,7 +44,7 @@
 .solar-chart__accumulated {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
 }
 
 .solar-chart__accumulated strong {
@@ -40,14 +52,15 @@
 }
 
 .solar-chart__red-square {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
   background: #ef382d;
   display: inline-block;
 }
 
 .solar-chart__power {
-  font-size: 8px;
+  font-size: 9px;
   color: #777;
 }
 
@@ -55,13 +68,15 @@
 
 .solar-chart__viewport {
   width: 100%;
-  height: 240px;
+  aspect-ratio: 1100 / 340;
+  height: auto;
+  min-height: 0;
 }
 
 .solar-chart__svg {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
 }
 
 .solar-chart__grid {
@@ -75,6 +90,7 @@
 }
 
 .solar-chart__curve {
+  fill: none;
   stroke: #6c6c6c;
   stroke-width: 1.4;
   stroke-dasharray: 1 4;
@@ -103,11 +119,9 @@
   display: flex;
   justify-content: space-between;
 
-  padding:
-    0 30px
-    5px;
+  padding: 8px 3% 7px;
 
-  font-size: 8px;
+  font-size: 9px;
   color: #555;
 }
 
@@ -116,18 +130,19 @@
 .solar-chart__controls {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 
-  padding: 10px 30px;
+  padding: 12px 3% 18px;
 }
 
 .solar-chart__time {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .solar-chart__power-value {
-  font-size: 11px;
+  font-size: 12px;
   color: #666;
   margin-right: auto;
 }
@@ -137,33 +152,84 @@
   background: white;
   border-radius: 4px;
 
-  padding: 5px 10px;
+  padding: 6px 12px;
 
   font-size: 11px;
   cursor: pointer;
+  transition: background-color 180ms ease;
 }
 
 .solar-chart__controls button:hover {
   background: #eee;
 }
 
-/* MOBILE */
+/* TABLET */
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .solar-chart__header {
-    padding: 0 15px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .solar-chart__axis {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 
   .solar-chart__controls {
-    padding: 10px 15px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .solar-chart {
+    border-radius: 4px;
+  }
+
+  .solar-chart__header {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 8px;
   }
 
   .solar-chart__power {
     display: none;
+  }
+
+  .solar-chart__viewport {
+    aspect-ratio: 1.8 / 1;
+  }
+
+  .solar-chart__axis {
+    padding: 7px 14px;
+    font-size: 7px;
+  }
+
+  .solar-chart__controls {
+    flex-wrap: wrap;
+    padding: 10px 14px 14px;
+    gap: 8px;
+  }
+
+  .solar-chart__time {
+    font-size: 12px;
+  }
+
+  .solar-chart__power-value {
+    font-size: 10px;
+  }
+
+  .solar-chart__controls button {
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .solar-chart__controls button {
+    transition: none;
   }
 }
